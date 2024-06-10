@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 export async function up(knex) {
-  return knex.schema.createTable('dance-styles', (table) => {
+  return knex.schema.createTable('users', (table) => {
     table.increments('id')
     table.string('name')
     table.boolean('is_active')
