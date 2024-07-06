@@ -1,6 +1,6 @@
 # Ritmo - An app designed to accompany students learning Latin dance
 
-Discover the ultimate Latin dance companion app that doubles as your personal library of moves and progress tracker. Perfect for students, it seamlessly guides your learning journey alongside your regular danceclasses, while cataloging your dance repertoire.
+Discover the ultimate Latin dance companion app that doubles as your personal library of moves and progress tracker. Perfect for students, it seamlessly guides your learning journey alongside your regular dance classes, while cataloging your dance repertoire.
 
 ## Table of Contents
 
@@ -24,10 +24,10 @@ The purpose of this app is to enhance the Latin dance learning experience by pro
 ### Goals
 - Facilitate seamless learning by providing a comprehensive library of Latin dance moves.
 - Track individual progress and milestones in mastering dance techniques.
-- Enhance student engagement and motivation through interactive learning tools and personalized feedback.
+- Enhance student engagement and motivation through interactive learning tools and personalised feedback.
 
 ### Background
-Born out of a passion for Latin dance and a desire to support students in their learning journey, this app combines an informative selection of dance moves, whilst also allowing students to track their progress and . It aims to support the way students learn and progress in Latin dance, offering a user-friendly platform that serves as both a dynamic move library and a personalized learning tracker.
+Born out of a passion for Latin dance and a desire to support students in their learning journey, this app combines an informative selection of dance moves, whilst also allowing students to track their progress. It aims to support the way students learn and progress in Latin dance, whilst trying to solve the challenges that students tend to face: Remembering the vast amount of moves with the correct technique!
 
 ### Key Features (MVP):
 
@@ -49,11 +49,12 @@ Born out of a passion for Latin dance and a desire to support students in their 
 
 
 ### Some of my Stretch goals/ideas (not all of them, but just so you get the idea):
+
 - Gamification Elements: Introduce points, badges, or levels based on user achievements and progress in learning dance moves.
 
 - Progressive Learning Paths: Develop structured learning paths or that guide users from beginner to advanced levels, with suggested sequences of moves and skills to master.
 
-- Notes & Class material storage: Students often take videos of themselves practicing, and of classes for reference material. A personal storage space for them to reference and place those files, and connect them to the move library (for privacy reasons, should be only visible to the user).
+- Notes & Class material storage: Students often take videos of themselves practicing, and of classes for reference material. A personal storage space for them to reference and place those files, and connect them to the move library (for privacy reasons, should only be visible to the user).
   
 - Email Notifications: Basic email notifications for account-related actions (e.g., registration confirmation, password reset).
 
