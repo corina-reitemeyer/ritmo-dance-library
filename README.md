@@ -1,35 +1,86 @@
-# Boilerplate: Fullstack with Sass
+# Ritmo - An app designed to accompany students learning Latin dance
+
+Discover the ultimate Latin dance companion app that doubles as your personal library of moves and progress tracker. Perfect for students, it seamlessly guides your learning journey alongside your regular danceclasses, while cataloging your dance repertoire.
+
+## Table of Contents
+
+- [Project Title](#project-title)
+  - [Table of Contents](#table-of-contents)
+  - [About the Project](#about-the-project)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Acknowledgements](#acknowledgements)
+
+
+## About the Project
+
+### Purpose
+The purpose of this app is to enhance the Latin dance learning experience by providing a comprehensive library of moves and tracking tools, empowering students to progress and master their dance skills with ease.
+
+### Goals
+- Facilitate seamless learning by providing a comprehensive library of Latin dance moves.
+- Track individual progress and milestones in mastering dance techniques.
+- Enhance student engagement and motivation through interactive learning tools and personalized feedback.
+
+### Background
+Born out of a passion for Latin dance and a desire to support students in their learning journey, this app combines an informative selection of dance moves, whilst also allowing students to track their progress and . It aims to support the way students learn and progress in Latin dance, offering a user-friendly platform that serves as both a dynamic move library and a personalized learning tracker.
+
+### Key Features (MVP):
+
+- Move Library: Basic collection of Latin dance moves with text descriptions and static images.
+
+- Progress Tracker: Simple checklist or progress bar to track completed moves.
+
+- User Profiles: Basic profiles for users to store their progress and favorite moves.
+
+- Video Playback: Integration with YouTube or Vimeo for instructional videos (assuming content is publicly available).
+
+- Responsive Design: Ensuring the app is usable across different screen sizes (desktop and mobile).
+
+- Feedback Form: Basic form for users to submit feedback or report issues.
+
+- Search Functionality: Simple search bar to find specific dance moves by name.
+
+
+
+
+### Some of my Stretch goals/ideas (not all of them, but just so you get the idea):
+- Gamification Elements: Introduce points, badges, or levels based on user achievements and progress in learning dance moves.
+
+- Progressive Learning Paths: Develop structured learning paths or that guide users from beginner to advanced levels, with suggested sequences of moves and skills to master.
+
+- Notes & Class material storage: Students often take videos of themselves practicing, and of classes for reference material. A personal storage space for them to reference and place those files, and connect them to the move library (for privacy reasons, should be only visible to the user).
+  
+- Email Notifications: Basic email notifications for account-related actions (e.g., registration confirmation, password reset).
+
+- Basic Authentication: User registration and login functionality.
+
+
+
+
+---
 
 ## Setup
 
-### What's included
+Run the following commands in your terminal:
 
-This repo includes:
-
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Vitest and testing library
-* configuration for server-side debugging in VS Code
-* configuration for preprocessing Sass
-
-### Installation
-
-#### **From the Github UI**
-
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
-
-#### **From the command line**
-
-```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
+```sh
+npm install
+npm run knex migrate:latest
+npm run knex seed:run
+cp .env.example .env
 ```
 
-You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
+To run in development:
+```sh
+npm run dev
+```
 
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-fullstack)
+To run in production:
+```sh
+npm start
+```
