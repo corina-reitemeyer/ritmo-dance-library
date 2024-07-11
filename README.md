@@ -1,4 +1,4 @@
-# Ritmo - An app designed to accompany students learning Latin dance
+# Ritmo - An app designed to accompany students learning Latin dance (WORK IN PROGRESS)
 
 Discover the ultimate Latin dance companion app that doubles as your personal library of moves and progress tracker. Perfect for students, it seamlessly guides your learning journey alongside your regular dance classes, while cataloging your dance repertoire.
 
