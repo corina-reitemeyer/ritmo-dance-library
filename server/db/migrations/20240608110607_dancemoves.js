@@ -17,7 +17,8 @@ export async function up(knex) {
     table.string('similar_to')
     table.increments('bar_counts')
     table.string('source')
-    table.string('instructions')
+    table.string('instructions_follower')
+    table.string('instructions_lead')
   })
 }
 
