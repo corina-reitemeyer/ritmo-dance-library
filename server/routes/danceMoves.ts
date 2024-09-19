@@ -27,4 +27,28 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+//POST route 'api/v1/dance-moves"
+router.post('/', async (req, res) => {
+  const newMove = req.body
+  try {
+    await db.addMove(newMove)
+    res.sendStatus(200)
+  } catch (error) {
+    console.error(`Database error ${error}`)
+    res.sendStatus(500)
+  }
+})
+
+// DELETE route 'api/v1/dance-moves/:id'
+router.delete('/:id', async (req, res) => {
+  const danceId = Number(req.params.id)
+  try {
+    await db.deleteMove(danceId)
+    res.sendStatus(200)
+  } catch (error) {
+    console.error(`Database error ${error}`)
+    res.sendStatus(500)
+  }
+})
+
 export default router
