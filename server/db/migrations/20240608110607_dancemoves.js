@@ -3,8 +3,9 @@
  * @returns { Promise<void> }
  */
 export async function up(knex) {
-  return knex.schema.createTable('dance-moves', (table) => {
-    table.increments('id')
+  return knex.schema.createTable('dance_moves', (table) => {
+    table.increments('id').primary()
+    table.integer('style_id').notNullable()
     table.string('name')
     table.string('level')
     table.string('synonymns')
@@ -15,7 +16,7 @@ export async function up(knex) {
     table.string('contains')
     table.string('based_on')
     table.string('similar_to')
-    table.increments('bar_counts')
+    table.integer('bar_counts').notNullable()
     table.string('source')
     table.string('instructions_follower')
     table.string('instructions_lead')
@@ -27,5 +28,5 @@ export async function up(knex) {
  * @returns { Promise<void> }
  */
 export async function down(knex) {
-  return knex.schema.dropTable('dance-moves')
+  return knex.schema.dropTable('dance_moves')
 }
