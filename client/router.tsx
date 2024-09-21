@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-key */
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from 'react-router-dom'
+import { createRoutesFromElements, Route } from 'react-router-dom'
 import App from './components/App'
+import MoveList from './components/MoveList'
 
-const router = createBrowserRouter(
-  createRoutesFromElements([<Route path="/" element={<App />} />])
+const routes = createRoutesFromElements(
+  <Route path="/" element={<App />}>
+    <Route index element={<MoveList />} />
+  </Route>,
 )
 
-export default router
+export default routes

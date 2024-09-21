@@ -1,4 +1,4 @@
-import DanceMove from './DanceMove'
+import DanceMove from './DanceMove/DanceMove'
 
 // This component will be used for the overview / library page
 export default function MoveList() {
