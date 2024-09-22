@@ -8,7 +8,8 @@ export default function MoveList() {
 
   const mutation = useMutation({
     mutationFn: (id: number) => deleteMove(id),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['games'] }),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: ['dance_moves'] }),
   })
 
   const handleDelete = async (id: number) => {
