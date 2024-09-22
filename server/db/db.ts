@@ -1,14 +1,14 @@
-import { DanceMoves } from '../../models/dance.ts'
+import { Move } from '../../models/dance.ts'
 import connection from './connection.ts'
 
 const db = connection
 
 // Get the dance moves
-export async function getAllMoves(): Promise<DanceMoves[]> {
+export async function getAllMoves(): Promise<Move[]> {
   return db('dance_moves').select()
 }
 
-export async function getMoveById(id: number): Promise<DanceMoves> {
+export async function getMoveById(id: number): Promise<Move> {
   return db('dance_moves').where({ id }).select().first()
 }
 
@@ -18,6 +18,6 @@ export function deleteMove(id: number) {
 }
 
 // Add the dance move
-export function addMove(newMove: DanceMoves) {
+export function addMove(newMove: Move) {
   return db('dance_moves').insert(newMove)
 }

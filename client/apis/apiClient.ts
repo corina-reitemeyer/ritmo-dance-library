@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { DanceMoves, Move } from '../../models/dance'
 
-const rootURL = '/api/v1'
+const rootURL = '/api/v1/dance-move'
 
 export async function fetchMoves(): Promise<Move[]> {
   const res = await request.get(rootURL)
@@ -12,8 +12,8 @@ export async function fetchMoveById(id: number): Promise<Move[]> {
   return res.body
 }
 
-export async function addMove(newGame: DanceMoves) {
-  await request.post(rootURL).send(newGame)
+export async function addMove(newMove: DanceMoves) {
+  await request.post(rootURL).send(newMove)
 }
 
 export async function deleteMove(id: number) {
