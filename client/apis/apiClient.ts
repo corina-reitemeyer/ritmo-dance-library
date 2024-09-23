@@ -4,8 +4,14 @@ import { DanceMoves, Move } from '../../models/dance'
 const rootURL = '/api/v1/dance-move'
 
 export async function fetchMoves(): Promise<Move[]> {
-  const res = await request.get(rootURL)
-  return res.body
+  try {
+    const res = await request.get(rootURL)
+    console.log('API Response:', res.body)
+    return res.body
+  } catch (error) {
+    console.error('Error fetching moves:', error)
+    throw error
+  }
 }
 export async function fetchMoveById(id: number): Promise<Move[]> {
   const res = await request.get(`${rootURL}/${id}`)
