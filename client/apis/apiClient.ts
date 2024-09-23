@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { DanceMoves, Move } from '../../models/dance'
 
-const rootURL = '/api/v1/dance-move'
+const rootURL = '/api/v1/dance-moves'
 
 export async function fetchMoves(): Promise<Move[]> {
   try {

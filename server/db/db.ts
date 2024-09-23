@@ -5,7 +5,18 @@ const db = connection
 
 // Get the dance moves
 export async function getAllMoves(): Promise<Move[]> {
-  return db('dance_moves').select()
+  try {
+    const moves = await db('dance_moves').select()
+    console.log('Fetched moves:', moves) // Log the fetched moves
+    return moves
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(`Error fetching all moves: ${error.message}`)
+    } else {
+      console.error('Unknown error fetching all moves:', error)
+    }
+    throw error
+  }
 }
 
 export async function getMoveById(id: number): Promise<Move> {

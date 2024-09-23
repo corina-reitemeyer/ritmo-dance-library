@@ -4,7 +4,7 @@ import DanceMove from './DanceMove/DanceMove'
 
 // This component will be used for the overview / library page
 export default function MoveList() {
-  console.log('MoveList component rendered')
+  // console.log('MoveList component rendered')
   const queryClient = useQueryClient()
 
   const mutation = useMutation({
@@ -15,7 +15,7 @@ export default function MoveList() {
 
   const handleDelete = async (id: number) => {
     await mutation.mutate(id)
-    console.log('Entry deleted successfully')
+    // console.log('Entry deleted successfully')
   }
 
   const {
@@ -33,15 +33,18 @@ export default function MoveList() {
     return <p>Loading...</p>
   }
 
+  if (!dance_moves || dance_moves.length === 0) {
+    return <p>No dance moves available.</p>
+  }
+
   console.log('Loading:', isLoading, 'Error:', isError, 'Data:', dance_moves) // Check if data is coming through via client side
 
   return (
     <>
-      {dance_moves.map((move, i) => {
+      {dance_moves.map((move) => {
         return (
           <div key={move.id}>
             <DanceMove
-              key={i}
               name={move.name}
               level={move.level}
               synonymns={move.synonymns}
