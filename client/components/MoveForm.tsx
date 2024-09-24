@@ -2,52 +2,143 @@ import { useState } from 'react'
 
 export default function MoveForm() {
   // UseStates to allow for form inputs changes
-  const [newName, setNewName] = useState('')
-  const [newLevel, setNewLevel] = useState('')
+  const [formValues, setFormValues] = useState({
+    name: '',
+    level: '',
+    synonyms: '',
+    translation: '',
+    moveType: '',
+    ruedaType: '',
+    startsWith: '',
+    contains: '',
+    basedOn: '',
+    similarTo: '',
+    barCounts: '',
+    variations: '',
+    instructionsForFollower: '',
+    instructionsForLead: '',
+    source: '',
+  })
 
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewName(e.target.value)
-  }
-
-  const handleLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewLevel(e.target.value)
+  // One handleChange to rule them all!
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }))
   }
 
   return (
     <>
       <form>
         <label htmlFor="name">Name</label>
-        <input onChange={handleNameChange} id="name"></input>
+        <input
+          name="name"
+          onChange={handleChange}
+          value={formValues.name}
+          id="name"
+        ></input>
         <label htmlFor="level">Level</label>
-        <input onChange={handleLevelChange} id="level"></input>
+        <input
+          name="level"
+          onChange={handleChange}
+          value={formValues.level}
+          id="level"
+        ></input>
         <label htmlFor="synonyms">Synonyms</label>
-        <input id="synonyms"></input>
+        <input
+          name="synonyms"
+          onChange={handleChange}
+          value={formValues.synonyms}
+          id="synonyms"
+        ></input>
         <label htmlFor="translation">Translation</label>
-        <input id="translation"></input>
+        <input
+          name="translation"
+          onChange={handleChange}
+          value={formValues.translation}
+          id="translation"
+        ></input>
         <label htmlFor="move_type">Move Type</label>
-        <input id="move_type"></input>
+        <input
+          name="moveType"
+          onChange={handleChange}
+          value={formValues.moveType}
+          id="move_type"
+        ></input>
         <label htmlFor="rueda_type">Rueda Sign</label>
-        <input id="rueda_type"></input>
+        <input
+          name="ruedaType"
+          onChange={handleChange}
+          value={formValues.ruedaType}
+          id="rueda_type"
+        ></input>
         <label htmlFor="starts_with">Starts with</label>
-        <input id="starts_with"></input>
+        <input
+          name="startsWith"
+          onChange={handleChange}
+          value={formValues.startsWith}
+          id="starts_with"
+        ></input>
         <label htmlFor="contains">Contains</label>
-        <input id="contains"></input>
+        <input
+          name="contains"
+          onChange={handleChange}
+          value={formValues.contains}
+          id="contains"
+        ></input>
         <label htmlFor="based_on">Based on</label>
-        <input id="based_on"></input>
+        <input
+          name="basedOn"
+          onChange={handleChange}
+          value={formValues.basedOn}
+          id="based_on"
+        ></input>
         <label htmlFor="similar_to">Similar to</label>
-        <input id="similar_to"></input>
+        <input
+          name="similarTo"
+          onChange={handleChange}
+          value={formValues.similarTo}
+          id="similar_to"
+        ></input>
         <label htmlFor="bar_counts">Bar counts</label>
-        <input id="bar_counts"></input>
+        <input
+          name="barCounts"
+          onChange={handleChange}
+          value={formValues.barCounts}
+          id="bar_counts"
+        ></input>
         <label htmlFor="variations">Variations</label>
-        <input id="variations"></input>
+        <input
+          name="variations"
+          onChange={handleChange}
+          value={formValues.variations}
+          id="variations"
+        ></input>
         <label htmlFor="instructions_for_follower">
           Instructions for Follower
         </label>
-        <input id="instructions_for_follower"></input>
+        <input
+          name="instructionsForFollower"
+          onChange={handleChange}
+          value={formValues.instructionsForFollower}
+          id="instructions_for_follower"
+        ></input>
         <label htmlFor="instructions_for_lead">Instructions for Lead</label>
-        <input id="instructions_for_lead"></input>
+        <input
+          name="instructionsForLead"
+          onChange={handleChange}
+          value={formValues.instructionsForLead}
+          id="instructions_for_lead"
+        ></input>
         <label htmlFor="source">Video Source</label>
-        <input id="source"></input>
+        <input
+          name="source"
+          onChange={handleChange}
+          value={formValues.source}
+          id="source"
+        ></input>
       </form>
     </>
   )
