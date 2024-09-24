@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function Header() {
   return (
     <nav>
-      <img src="" alt="logo for Ritmo app" />
+      <img src="/ritmo-logo.png" alt="logo for Ritmo app" />
       <ul>
         <li>
           <Link to="/cuban-salsa">Cuban Salsa</Link>
