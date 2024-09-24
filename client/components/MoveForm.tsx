@@ -1,9 +1,13 @@
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
+import { DanceMoves } from '../../models/dance'
+import { addMove } from '../apis/apiClient'
 
 export default function MoveForm() {
   // UseStates to allow for form inputs changes
   const [formValues, setFormValues] = useState({
     name: '',
+    styleId: 0,
     level: '',
     synonyms: '',
     translation: '',
@@ -13,7 +17,7 @@ export default function MoveForm() {
     contains: '',
     basedOn: '',
     similarTo: '',
-    barCounts: '',
+    barCounts: 0,
     variations: '',
     instructionsForFollower: '',
     instructionsForLead: '',
@@ -29,15 +33,54 @@ export default function MoveForm() {
     }))
   }
 
+  // Adding new data into the dance_moves database
+  const queryClient = useQueryClient()
+  const addMutation = useMutation({
+    mutationFn: (move: DanceMoves) => addMove(move),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: ['dance_moves'] }),
+  })
+
+  // Handles the submit interaction when user clicks on submit button
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    addMutation.mutate({
+      name: formValues.name,
+      level: formValues.level,
+      synonyms: formValues.synonyms,
+      translation: formValues.translation,
+      moveType: formValues.moveType,
+      ruedaSign: formValues.ruedaType,
+      startsWith: formValues.startsWith,
+      contains: formValues.contains,
+      basedOn: formValues.basedOn,
+      similarTo: formValues.similarTo,
+      barCounts: formValues.barCounts,
+      variations: formValues.variations,
+      instructionsForFollower: formValues.instructionsForFollower,
+      instructionsForLead: formValues.instructionsForLead,
+      source: formValues.source,
+      style_id: formValues.styleId,
+    })
+  }
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input
           name="name"
           onChange={handleChange}
           value={formValues.name}
           id="name"
+        ></input>
+        <label htmlFor="styleId">Dance Style</label>
+        <input
+          name="styleId"
+          type="number"
+          onChange={handleChange}
+          value={formValues.styleId}
+          id="styleId"
         ></input>
         <label htmlFor="level">Level</label>
         <input
@@ -67,12 +110,12 @@ export default function MoveForm() {
           value={formValues.moveType}
           id="move_type"
         ></input>
-        <label htmlFor="rueda_type">Rueda Sign</label>
+        <label htmlFor="rueda_sign">Rueda Sign</label>
         <input
-          name="ruedaType"
+          name="ruedaSign"
           onChange={handleChange}
           value={formValues.ruedaType}
-          id="rueda_type"
+          id="rueda_sign"
         ></input>
         <label htmlFor="starts_with">Starts with</label>
         <input
@@ -105,9 +148,15 @@ export default function MoveForm() {
         <label htmlFor="bar_counts">Bar counts</label>
         <input
           name="barCounts"
-          onChange={handleChange}
-          value={formValues.barCounts}
+          type="number"
+          onChange={(e) =>
+            setFormValues({
+              ...formValues,
+              barCounts: parseInt(e.target.value) || 0,
+            })
+          }
           id="bar_counts"
+          value={formValues.barCounts}
         ></input>
         <label htmlFor="variations">Variations</label>
         <input
@@ -139,6 +188,7 @@ export default function MoveForm() {
           value={formValues.source}
           id="source"
         ></input>
+        <button>Submit</button>
       </form>
     </>
   )

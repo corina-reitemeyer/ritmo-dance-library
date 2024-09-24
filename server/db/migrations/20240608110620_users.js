@@ -11,7 +11,7 @@ export async function up(knex) {
     table.string('email')
     table.string('password')
     table.string('role')
-    table.string('saved_moves')
+    table.integer('saved_moves')
   })
 }
 

@@ -2,17 +2,17 @@ export interface DanceMoves {
   style_id: number
   name: string
   level: string
-  synonymns: string
+  synonyms: string
   translation: string
-  move_type: string
-  rueda_sign: string
-  starts_with: string
+  moveType: string
+  ruedaSign: string
+  startsWith: string
   contains: string
-  based_on: string
-  similar_to: string
-  bar_counts: number
-  instructions_follower: string
-  instructions_lead: string
+  basedOn: string
+  similarTo: string
+  barCounts: number
+  instructionsForFollower: string
+  instructionsForLead: string
   source: string
   variations: string
 }
