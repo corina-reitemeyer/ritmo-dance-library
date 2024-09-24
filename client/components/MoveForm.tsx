@@ -1,11 +1,25 @@
+import { useState } from 'react'
+
 export default function MoveForm() {
+  // UseStates to allow for form inputs changes
+  const [newName, setNewName] = useState('')
+  const [newLevel, setNewLevel] = useState('')
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewName(e.target.value)
+  }
+
+  const handleLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNewLevel(e.target.value)
+  }
+
   return (
     <>
       <form>
         <label htmlFor="name">Name</label>
-        <input id="name"></input>
+        <input onChange={handleNameChange} id="name"></input>
         <label htmlFor="level">Level</label>
-        <input id="level"></input>
+        <input onChange={handleLevelChange} id="level"></input>
         <label htmlFor="synonyms">Synonyms</label>
         <input id="synonyms"></input>
         <label htmlFor="translation">Translation</label>
